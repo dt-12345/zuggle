@@ -2,7 +2,7 @@
 
 #include "common.hpp"
 
-#define EXL_MODULE_NAME "msdura"
+#define EXL_MODULE_NAME "zuggle"
 #define EXL_MODULE_NAME_LEN 8
 
 #define EXL_DEBUG

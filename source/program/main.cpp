@@ -53,7 +53,7 @@ static constexpr u64 s_VFRMgrOffsets[] = {
     0x04661598, 0, 0, 0, 0, 0x04725bb8,
 };
 
-void set_pending_drop(const GameActor* actor) {
+void set_pending_drop(GameActor* actor) {
     if (actor == nullptr) return;
     if (version == 0) {
         // cursed but it's the laziest solution to the dependency ring buffer being smaller on 1.0.0 than other versions
@@ -89,7 +89,7 @@ void setEquipedDrawn(DynamicEquipmentComponent* cmp) {
     }
 };
 
-void equip_and_draw(const GameActor* actor) {
+void equip_and_draw(GameActor* actor) {
     if (actor == nullptr) return;
     if (version == 0) {
         actor = reinterpret_cast<GameActor*>(reinterpret_cast<uintptr_t>(actor) - 0x8);

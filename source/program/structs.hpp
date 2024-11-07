@@ -8,7 +8,7 @@ struct PtrArray {
     int max;
     void** array;
 
-    void* at(size_t index) const {
+    void* at(size_t index) {
         if (index >= count) {
             return array[0];
         }
@@ -27,7 +27,7 @@ struct GameActor {
     EquipmentUserComponent* get_equipment_user_component() {
         return reinterpret_cast<EquipmentUserComponent*>(components.at(70));
     }
-    DynamicEquipmentComponent* get_dynamic_equipment_component() const {
+    DynamicEquipmentComponent* get_dynamic_equipment_component() {
         return reinterpret_cast<DynamicEquipmentComponent*>(components.at(65));
     }
 };
@@ -53,7 +53,7 @@ struct ActorLink {
         return true;
     }
 
-    const GameActor* get_actor() const {
+    GameActor* get_actor() {
         if (is_valid()) return link_data->actor;
         return nullptr;
     }
